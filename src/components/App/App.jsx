@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 import GalleryList from '../GalleryList/GalleryList';
+import GalleryForm from '../GalleryForm/GalleryForm';
 
 class App extends Component {
   state = {
@@ -34,6 +35,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
+        <GalleryForm getGallery={this.getGallery}/>
         <GalleryList galleryList={this.state.galleryList}/>
       </div>
     ); // end return
