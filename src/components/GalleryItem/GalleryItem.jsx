@@ -26,7 +26,7 @@ class GalleryItem extends Component {
       })
     }
 
-    //delete picture
+    //delete picture from gallery DB
     deletePicture = (Id) => {
       console.log('Delete picture');
       axios.delete(`./gallery/${Id}`)
@@ -37,7 +37,7 @@ class GalleryItem extends Component {
       .catch(err => {
         console.log('Cannot delete picture', err);
       })
-    }
+    } // end deletePicture
 
   // posting pictures to DOM and ability to increase likes for pictures
   render() {
@@ -49,7 +49,8 @@ class GalleryItem extends Component {
             <div>{this.props.picture.description}</div>}
         </div>
         <div>
-          <button onClick={()=> this.addLikes(this.props.picture.id)}>Like</button><br/>
+          <button onClick={()=> this.addLikes(this.props.picture.id)}>Like</button><span></span>
+          <button onClick={()=> this.deletePicture(this.props.picture.id)}>Delete</button><br/>
           <p>{this.props.picture.likes} Likes</p>
         </div>
       </div>
