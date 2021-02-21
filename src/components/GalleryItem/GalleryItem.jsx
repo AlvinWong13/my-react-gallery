@@ -26,6 +26,19 @@ class GalleryItem extends Component {
       })
     }
 
+    //delete picture
+    deletePicture = (Id) => {
+      console.log('Delete picture');
+      axios.delete(`./gallery/${Id}`)
+      .then(response => {
+        console.log(response);
+        this.props.getGallery();
+      })
+      .catch(err => {
+        console.log('Cannot delete picture', err);
+      })
+    }
+
   // posting pictures to DOM and ability to increase likes for pictures
   render() {
     console.log(this.props);
