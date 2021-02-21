@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
+import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 
 class GalleryForm extends Component {
   state = {
@@ -42,9 +43,10 @@ class GalleryForm extends Component {
   render() {
     return(
       <div>
-        <Input value={this.state.path} type="text" placeholder="url" onChange={(event) => this.handleInputs(event, 'path')}/>
-        <Input value={this.state.description} type="text" placeholder="Description" onChange={(event) => this.handleInputs(event, 'description')}/>
-        <Button variant="outlined" color="primary" onClick={this.addPicture}>Add Picture to Gallery</Button>
+        <Input value={this.state.path} type="text" placeholder="URL" onChange={(event) => this.handleInputs(event, 'path')}/>
+        <Input value={this.state.description} type="text" placeholder="DESCRIPTION" onChange={(event) => this.handleInputs(event, 'description')}/>
+        <Button variant="outlined" color="primary" startIcon={<AddToPhotosIcon />}
+          onClick={this.addPicture}>Add to Gallery</Button>
       </div>
     ) // end return
   } // end render
