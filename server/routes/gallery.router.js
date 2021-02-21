@@ -1,3 +1,4 @@
+const { Router } = require('express');
 const express = require('express');
 const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
@@ -53,5 +54,21 @@ router.post('/', (req, res) => {
     res.sendStatus(500);
   })
 }) // end POST route
+
+// DELETE Route
+router.delete('/:id', (req, res) => {
+  let pictureId = req.params.id;
+  console.log('Delete picture', pictureId);
+  const sqlText=`DELETE FROM "gallery" WHERE id = $1;`;
+  pool.query(sqlText, [pictureId])
+  .then(result => {
+    console.log('Picture deleted');
+    res.sendStatus(200);
+  })
+  .catch(err => {
+    console.log('Unable to delete picture',err);
+    res.sendStatus(500);
+  })
+}) // end DELETE route
 
 module.exports = router;
