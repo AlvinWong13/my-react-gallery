@@ -4,6 +4,7 @@ import './App.css';
 
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
+import Grid from '@material-ui/core/Grid';
 
 class App extends Component {
   state = {
@@ -35,8 +36,13 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryForm getGallery={this.getGallery}/>
-        <GalleryList galleryList={this.state.galleryList}/>
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <GalleryForm getGallery={this.getGallery}/>
+          </Grid>
+          <br/>
+          <GalleryList galleryList={this.state.galleryList}/>
+        </Grid>
       </div>
     ); // end return
   } // end render
