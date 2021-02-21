@@ -13,8 +13,8 @@ class GalleryForm extends Component {
     axios.post('/gallery', this.state)
     .then(response => {
       console.log(response);
-      this.props.getGallery();
       this.emptyInputs();
+      window.location.reload();
     })
     .catch(err => {
       console.log(err);

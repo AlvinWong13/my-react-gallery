@@ -11,7 +11,7 @@ class GalleryItem extends Component {
       console.log('Increased photo likes');
       axios.put(`./gallery/like/${Id}`)
       .then(response => {
-        this.props.getGallery();
+        window.location.reload();
       })
       .catch(err => {
         console.log('Cannot get gallery', err);
@@ -32,7 +32,7 @@ class GalleryItem extends Component {
       axios.delete(`./gallery/${Id}`)
       .then(response => {
         console.log(response);
-        this.props.getGallery();
+        window.location.reload();
       })
       .catch(err => {
         console.log('Cannot delete picture', err);
