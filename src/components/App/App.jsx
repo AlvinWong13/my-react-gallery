@@ -7,7 +7,7 @@ import GalleryForm from '../GalleryForm/GalleryForm';
 
 class App extends Component {
   state = {
-    galleryList: []
+    galleryList: [],
   } // end state
 
   // on load get gallery

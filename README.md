@@ -1,9 +1,19 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# My Life Gallery
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+An application that allows users to input images from a url and provide a description of the image. Each image has a like counter and a remove image function if the user wants to delete the image. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Screenshot
+
+## Contributors
+
+Alvin Wong
+
+## Built With
+
+- HTML, CSS, JS, Node, bodyParser, axios, express, react, pg
+
+## Acknowledgement
+
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality
