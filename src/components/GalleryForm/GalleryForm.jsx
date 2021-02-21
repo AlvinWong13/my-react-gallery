@@ -14,6 +14,7 @@ class GalleryForm extends Component {
     .then(response => {
       console.log(response);
       this.props.getGallery();
+      this.emptyInputs();
     })
     .catch(err => {
       console.log(err);
@@ -28,11 +29,19 @@ class GalleryForm extends Component {
     })
   } // end handleInputs
 
+  // empty input boxes in DOM
+  emptyInputs =() => {
+    this.setState({
+      path: '',
+      description: '',
+    })
+  } // end emptyInputs
+
   render() {
     return(
       <div>
-        <input type="text" placeholder="url" onChange={(event) => this.handleInputs(event, 'path')}/>
-        <input type="text" placeholder="Description" onChange={(event) => this.handleInputs(event, 'description')}/>
+        <input value={this.state.path} type="text" placeholder="url" onChange={(event) => this.handleInputs(event, 'path')}/>
+        <input value={this.state.description} type="text" placeholder="Description" onChange={(event) => this.handleInputs(event, 'description')}/>
         <button onClick={this.addPicture}>Add Picture to Gallery</button>
       </div>
     ) // end return
