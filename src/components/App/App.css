@@ -19,3 +19,31 @@ img{
   max-height: 250px;
   min-height: 150px;
 }
+
+.galleryList {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
+}
+
+.galleryItem {
+  max-width: 275px;
+  max-height: 250px;
+  color: white;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+.galleryItem div{
+  text-align: center;
+  min-width: 500%;
+  min-height: 175px;
+}
+
+.galleryInfo {
+  color: white;
+  background-color: #222;
+  margin-right: 20px;
+  max-width: 275px;
+  min-width: 375%;
+}
