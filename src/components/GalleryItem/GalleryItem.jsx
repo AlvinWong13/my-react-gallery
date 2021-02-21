@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 class GalleryItem extends Component {
-  state = {} // end state
+  state = {
+    toggle: true,
+  } // end state
 
   // increase likes for photo
     addLikes = (Id) => {
@@ -16,17 +18,26 @@ class GalleryItem extends Component {
       })
     } // end addLikes
 
+    // toggle between description and image
+    toggleDisplay = () => {
+      console.log('toggle display');
+      this.setState({
+        toggle: !this.state.toggle
+      })
+    }
+
   // posting pictures to DOM and ability to increase likes for pictures
   render() {
     console.log(this.props);
     return(
-      <div key={this.props.picture.id}>
+      <div>
+        <div className="galleryItem" onClick={this.toggleDisplay}>
+          {this.state.toggle ? <img src={this.props.picture.path} alt={this.props.picture.description} /> : 
+            <div>{this.props.picture.description}</div>}
+        </div>
         <div>
-          <img src={this.props.picture.path} alt={this.props.picture.description} />
-          <div>
-            <button onClick={()=> this.addLikes(this.props.picture.id)}>Like</button><br/>
-            <p>{this.props.picture.likes} Likes</p>
-          </div>
+          <button onClick={()=> this.addLikes(this.props.picture.id)}>Like</button><br/>
+          <p>{this.props.picture.likes} Likes</p>
         </div>
       </div>
     ) // end return

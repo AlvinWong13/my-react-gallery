@@ -28,12 +28,12 @@ class App extends Component {
   } // end getGallery
 
   render() {
+    console.log(this.State)
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
         <GalleryList galleryList={this.state.galleryList}/>
       </div>
     ); // end return
