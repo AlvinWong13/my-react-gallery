@@ -30,7 +30,7 @@ class App extends Component {
   } // end getGallery
 
   render() {
-    console.log(this.State)
+    // console.log(this.State)
     return (
       <div className="App">
         <header className="App-header">

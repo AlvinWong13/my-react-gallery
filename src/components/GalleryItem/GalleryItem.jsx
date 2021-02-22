@@ -54,7 +54,7 @@ class GalleryItem extends Component {
     console.log(this.props);
     return(
       <div className="galleryItem">
-        <div className="galleryItem" onClick={this.toggleDisplay}>
+        <div onClick={this.toggleDisplay}>
           {this.state.toggle ? <img src={this.props.picture.path} alt={this.props.picture.description} /> : 
             <div>{this.props.picture.description}</div>}
         </div>
