@@ -41,7 +41,7 @@ class App extends Component {
             <GalleryForm getGallery={this.getGallery}/>
           </Grid>
           <br/>
-          <GalleryList galleryList={this.state.galleryList}/>
+          <GalleryList galleryList={this.state.galleryList} getGallery={this.getGallery}/>
         </Grid>
       </div>
     ); // end return
